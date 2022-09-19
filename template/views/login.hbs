@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    {{>headerLinks}}
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {{>navbar}}
+    <section>
+        <div class="container container-login">
+            <div class="title">LogIn</div>
+            <div class="content">
+                {{!-- submit hoky post method ki madad sy /register ky route py redirect krega keoka database ma data
+                save krasky - app.js ky route ma redirect --}}
+                <form action="/login" method="POST">
+                    <div class="user-details login-user">
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" name="email" placeholder="Email Address *" value="">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" name="password" placeholder="Password *" value="">
+                        </div>
+                    </div>
+                    <div class="button login-btn">
+                        <input type="submit" value="signIn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    {{>footer}}
+</body>
+
+</html>
