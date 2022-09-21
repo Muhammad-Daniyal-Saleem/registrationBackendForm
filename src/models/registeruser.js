@@ -46,7 +46,7 @@ registerSchema.methods.generateAuthToken = async function () {
     try {
         // toString - objectId convert into string - id ki value as a object ma hoti isilya
         // console.log(this._id.toString());
-        const generateToken = await jwt.sign({ _id: this._id.toString() }, process.env.SECRET_KEY)
+        const generateToken = await jwt.sign({ _id: this._id.toString()}, process.env.SECRET_KEY)
         this.tokens = this.tokens.concat({token: generateToken});  // tokens ki field ma token ky object ma genearated token dalrhy 
         await this.save(); // apna token ki filed ma tokenValue daldi to database ma save krana kalya call kra this.save or promise return krta hy, or token ki value yehe save krwani pregi call ki jgah py koe tareeka nh save krna ka
         return generateToken;
